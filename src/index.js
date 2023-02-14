@@ -8,18 +8,18 @@ function updateSubtotal(product) {
   const subTotal = extractedPrice * extractedQuantity
 const resultSubTotal = product.querySelector('.subtotal')
 resultSubTotal.innerText = `$${subTotal}`
-console.log(resultSubTotal.innerText)
 }
 
 function calculateAll() {
-
-
-  // ITERATION 2
-  //... your code goes here
+const products = document.querySelectorAll('.product')
+products.forEach(element => {
+  updateSubtotal(element)
+});
 
   // ITERATION 3
   //... your code goes here
 }
+calculateAll()
 
 // ITERATION 4
 
