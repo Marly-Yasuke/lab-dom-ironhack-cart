@@ -5,21 +5,23 @@ function updateSubtotal(product) {
   const quantity = product.querySelector(".quantity input");
   const extractedQuantity = parseInt(quantity.value);
   const extractedPrice = parseFloat(price.innerText);
-  const subTotal = extractedPrice * extractedQuantity
-const resultSubTotal = product.querySelector('.subtotal')
-resultSubTotal.innerText = `$${subTotal}`
+  const subTotal = extractedPrice * extractedQuantity;
+  const resultSubTotal = product.querySelector(".subtotal");
+  resultSubTotal.innerText = subTotal;
 }
 
 function calculateAll() {
-const products = document.querySelectorAll('.product')
-products.forEach(element => {
-  updateSubtotal(element)
-});
+  // I want to loop in the 2 tr and for each tr apply updtateSubtotal
+  // I want to isolate the output (check html)
+  // Nodelist maybe as an array then reduce the output
+  const products = document.querySelectorAll(".product");
+  const totalFinal = document.getElementById("final");
 
-  // ITERATION 3
-  //... your code goes here
+  products.forEach((element) => {
+    updateSubtotal(element);
+  });
 }
-calculateAll()
+calculateAll();
 
 // ITERATION 4
 
